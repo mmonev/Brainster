@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .progress-bar {
+      width: 150px;
+      height: 20px;
+      border: 1px solid black;
+    }
+
+    .read {
+      color: green;
+    }
+
+    .not-read {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Book List</h1>
+
+  <div id="book-table-container">
+    <table id="book-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Progress</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <h2>List of Books</h2>
+  <ul id="book-list"></ul>
+
+  <form id="add-book-form">
+    <label for="title">Title:</label>
+    <input type="text" id="title" required><br>
+
+    <label for="author">Author:</label>
+    <input type="text" id="author" required><br>
+
+    <label for="max-pages">Max Pages:</label>
+    <input type="number" id="max-pages" required><br>
+
+    <label for="on-page">On Page:</label>
+    <input type="number" id="on-page" required><br>
+
+    <input type="submit" value="Add Book">
+  </form>
+
+  <script>
+
+    function generateBookTable() {
+      var tableBody = document.querySelector("#book-table tbody");
+      tableBody.innerHTML = "";
+
+      books.forEach(function(book) {
+        var row = document.createElement("tr");
+
+        var titleCell = document.createElement("td");
+        titleCell.textContent = book.title;
+        row.appendChild(titleCell);
+
+        var authorCell = document.createElement("td");
+        authorCell.textContent = book.author;
+        row.appendChild(authorCell);
+
+        var progressCell = document.createElement("td");
+
+        var progressBar = document.createElement("div");
+        progressBar.classList.add("progress-bar");
+
+        var progress = (book.onPage / book.maxPages) * 100;
+        progressBar.style.width = progress + "%";
+        progressBar.textContent = progress.toFixed(2) + "%";
+
+        progressCell.appendChild(progressBar);
+        row.appendChild(progressCell);
+
+        var statusCell = document.createElement("td");
+        statusCell.textContent = book.onPage === book.maxPages ? "Read" : "Not Read";
+        row.appendChild(statusCell);
+
+        tableBody.appendChild(row);
+      });
+    }
+
+    function generateBookList() {
+      var bookList = document.getElementById("book-list");
+      bookList.innerHTML = "";
+
+      books.forEach(function(book) {
+        var listItem = document.createElement("li");
+        var message;
+
+        if (book.onPage === book.maxPages) {
+          message = `You already read "${book.title}" by ${book.author}`;
+          listItem.classList.add("read");
+        } else {
+          message = `You still need to read "${book.title}" by ${book.author}`;
+          listItem.classList.add("not-read");
+        }
+
+        listItem.textContent = message;
+        bookList.appendChild(listItem);
+      });
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+
+      var title = document.getElementById("title").value;
+      var author = document.getElementById("author").value;
+      var maxPages = parseInt(document.getElementById("max-pages").value);
+      var onPage = parseInt(document.getElementById("on-page").value);
+
+      var book = { title: title, author: author, maxPages: maxPages, onPage: onPage };
+      books.push(book);
+
+
+      document.getElementById("add-book-form").reset();
+
+ 
+      generateBookTable();
+      generateBookList();
+    }
+
+    var addBookForm = document.getElementById("add-book-form");
+    addBookForm.addEventListener("submit", handleFormSubmit);
+
+    var books = [];
+
+    generateBookTable();
+    generateBookList();
+  </script>
+</body>
+</html>
