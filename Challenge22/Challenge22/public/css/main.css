@@ -1,0 +1,37 @@
+body {
+    background: linear-gradient(to right, rgba(39, 18, 5, 0.9), rgba(39, 18, 5, 0.9)), url('../images/coffee.jpg');
+}
+
+
+.nav-bg {
+    background-color: rgba(29, 13, 3, 0.993);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #dc9004;
+}
+
+.navbar-dark .navbar-nav .nav-link:checked {
+    color: #ce8909;
+}
+
+.transperent-bg {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.500), rgba(248, 236, 236, 0.945));
+    /* opacity: 0.7; */
+}
+
+.front-div {
+    width: inherit;
+    position: absolute;
+    top: 500px;
+    left: 15%;
+}
+
+.front-div-btn {
+    margin-bottom: -50px;
+}
+
+.div-border {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
