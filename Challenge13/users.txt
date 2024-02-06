@@ -1,0 +1,3 @@
+martin@example.com, Martin=$2y$10$SalU9oD//59U//dHPcOiVe6axWLR0XAZ286L3JuODBgTIXbJdVBqy
+jordan@example.com, jodran12=$2y$10$rZ7t41Tby3fptcnWR1Drc.D1Th2u2b/1e1rfygkvL/cQDfsXMFFXS
+nikola@example.com, nikola22=$2y$10$p4XwszrmzOOmIvMCm/5nA.6YLaqLy2FV8d5WegWf9xnSC9znqS3qy
