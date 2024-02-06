@@ -1,0 +1,68 @@
+header {
+    height: 50vh;
+}
+
+.expandHeight {
+    height: 65vh;
+}
+
+
+header nav ul li {
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+
+header .bg-light {
+    background: transparent !important;
+}
+
+header h1 {
+    font-size: 4em;
+    font-weight: bold;
+    padding-bottom: 1vw;
+}
+
+header .elevate {
+    height: 90%;
+}
+
+header .subtitle {
+    font-size: 2em;
+    padding-bottom: 1vw;
+}
+
+header h4 {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, .7);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+main p {
+    line-height: 1.5em;
+    color: rgba(0, 0, 0, .7);
+}
+
+main form .form-control {
+    border: 0;
+    padding: 2em 0;
+}
+
+main form .form-control:focus {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+}
+
+main .btn {
+    border-radius: 0 !important;
+}
+
+.socialIconsContainer  i {
+    margin: 1% 5%;
+    cursor: pointer;
+}
+

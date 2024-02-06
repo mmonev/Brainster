@@ -1,0 +1,42 @@
+* {
+    font-family: Geneva, Tahoma, sans-serif;
+}
+body{
+    min-height: 100vh;
+    padding-bottom: 150px;
+}
+
+.bg-header {
+    height: 450px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/synthesio-0301.gif') no-repeat center/cover;
+}
+
+.hompage-project-card:hover {
+    border: 2px solid rgb(185, 185, 37);
+    box-shadow: -2px 3px 30px -8px rgba(0, 0, 0, 0.96);
+    -webkit-box-shadow: -2px 3px 30px -8px rgba(0, 0, 0, 0.96);
+    -moz-box-shadow: -2px 3px 30px -8px rgba(0, 0, 0, 0.96);
+    transition: all 300ms ease-in-out;
+}
+
+.edit-card .card-footer {
+    visibility: hidden;
+}
+
+.edit-card:hover .card-footer {
+    visibility: visible;
+}
+
+.edit-project-form {
+    display: none;
+    opacity: 0;
+}
+
+.nav-logo {
+    width: 80px;
+}
+
+.img-footer {
+    padding: 5px;
+    width: 65px;
+}
